@@ -29,11 +29,21 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double w=Double.parseDouble(weight.getText().toString());
-                double h=Double.parseDouble(height.getText().toString());
-                double res = (w / (h * h));
+                String we = weight.getText().toString();
+                String he = height.getText().toString();
+                //double res = (w / (h * h));
 
-                result.setText("Your BMI is "+res);
+
+                if (we.isEmpty() || he.isEmpty()) {
+                    result.setText("Please Enter Both the Fields");
+                } else {
+                    double weigh = Double.parseDouble(we);
+                    double hei = Double.parseDouble(he);
+                    double res = (weigh / (hei * hei));
+                    result.setText("Your BMI is " + res);
+                }
+
+
 
             }
         });
