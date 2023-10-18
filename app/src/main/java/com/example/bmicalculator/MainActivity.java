@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
                     double weigh = Double.parseDouble(we);
                     double hei = Double.parseDouble(he);
                     double res = (weigh / (hei * hei));
-                    result.setText("Your BMI is " + res);
+
+                    String newres=String.format("Your BMI is :%.3f",res);
+                    result.setText(newres);
                 }
 
 
